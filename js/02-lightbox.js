@@ -4,8 +4,6 @@ const gallery = document.querySelector('.gallery')
 const galleryMarkup = createGalleryMarkup(galleryItems);
 
 gallery.insertAdjacentHTML('beforeend', galleryMarkup)
-gallery.addEventListener("click", onGalleryClick);
-console.log(onGalleryClick)
 
 function createGalleryMarkup(galleryFunction){
     return galleryFunction
@@ -18,12 +16,9 @@ function createGalleryMarkup(galleryFunction){
       })
       .join("");
 }
-function onGalleryClick(event){
-    event.preventDefault();
-    const lightBox = new SimpleLightbox(".gallery__item", {
-        captionDelay: 250,
-        captionsData: "alt",
-        scrollZoom: false,
-      });
-}
 
+new SimpleLightbox(".gallery__item", {
+    captionDelay: 250,
+    captionsData: "alt",
+    scrollZoom: false,
+  });
